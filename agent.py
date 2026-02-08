@@ -15,8 +15,8 @@ github_mcp_config = MCPToolset(
             args=["-y", "@modelcontextprotocol/server-github"],
             env={
                 "GITHUB_PERSONAL_ACCESS_TOKEN": os.getenv("GITHUB_PERSONAL_ACCESS_TOKEN"),
-                "PATH": os.environ.get("PATH"), # Ensure npx is findable
-                "SystemRoot": os.environ.get("SystemRoot")
+                "PATH": os.environ.get("PATH") # Ensure npx is findable
+                # "SystemRoot": os.environ.get("SystemRoot") #for windows systems
             }
         )
     )
@@ -30,7 +30,7 @@ if not os.getenv("GOOGLE_CLOUD_REGION"):
 
 init(
     project=os.getenv("GOOGLE_CLOUD_PROJECT"),
-    location=os.getenv("GOOGLE_CLOUD_REGION"),
+    location=os.getenv("GOOGLE_CLOUD_REGION")
 )
 
 # Create the agent for scanning .sql files in repo
